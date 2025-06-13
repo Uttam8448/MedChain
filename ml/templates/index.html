@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Disease Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+    input, label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Multiple Disease Prediction</h2>
+  <form method="post" action="/predict_form">
+
+    <!-- Diabetes Features -->
+    <label>Pregnancies (Number of Pregnancies): 
+      <input type="number" name="Pregnancies" step="1" placeholder="0-20" required>
+    </label>
+    <label>Glucose (Plasma Glucose Concentration): 
+      <input type="number" name="Glucose" step="0.1" placeholder="50-200" required>
+    </label>
+    <label>Blood Pressure (Diastolic BP): 
+      <input type="number" name="BloodPressure" step="0.1" placeholder="40-120" required>
+    </label>
+    <label>Skin Thickness (Triceps Skin Fold in mm): 
+      <input type="number" name="SkinThickness" step="0.1" placeholder="7-50" required>
+    </label>
+    <label>Insulin (2-Hour Serum Insulin in μU/ml): 
+      <input type="number" name="Insulin" step="0.1" placeholder="15-300" required>
+    </label>
+    <label>BMI (Body Mass Index): 
+      <input type="number" name="BMI" step="0.1" placeholder="10-60" required>
+    </label>
+    <label>DPF (Diabetes Pedigree Function): 
+      <input type="number" name="DiabetesPedigreeFunction" step="0.01" placeholder="0.0-2.5" required>
+    </label>
+    <label>Age (in Years): 
+      <input type="number" name="Age" step="1" placeholder="10-100" required>
+    </label>
+
+    <!-- Heart Features -->
+    <label>Sex/Gender (0 = Female, 1 = Male): 
+      <input type="number" name="Sex" placeholder="0 or 1" required>
+    </label>
+    <label>Chest Pain Type (CPT): 
+      <input type="number" name="ChestPainType" placeholder="0-3" required>
+    </label>
+    <label>Resting Blood Pressure (RestingBP in mm Hg): 
+      <input type="number" name="RestingBP" placeholder="80-200" required>
+    </label>
+    <label>Cholesterol (in mg/dL): 
+      <input type="number" name="Cholesterol" placeholder="100-400" required>
+    </label>
+    <label>Fasting Blood Sugar (FBS > 120 mg/dL): 
+      <input type="number" name="FastingBS" placeholder="0 or 1" required>
+    </label>
+    <label>Resting ECG (Electrocardiographic Results): 
+      <input type="number" name="RestingECG" placeholder="0-2" required>
+    </label>
+    <label>Maximum Heart Rate Achieved (MaxHR): 
+      <input type="number" name="MaxHR" placeholder="60-220" required>
+    </label>
+    <label>Exercise Induced Angina (0 = No, 1 = Yes): 
+      <input type="number" name="ExerciseAngina" placeholder="0 or 1" required>
+    </label>
+    <label>Oldpeak (ST Depression): 
+      <input type="number" name="Oldpeak" step="0.1" placeholder="0.0-6.0" required>
+    </label>
+    <label>ST Slope (0 = Upsloping, 1 = Flat, 2 = Downsloping): 
+      <input type="number" name="ST_Slope" placeholder="0-2" required>
+    </label>
+
+    <!-- Anemia Features -->
+    <label>Hemoglobin (Hb in g/dL): 
+      <input type="number" name="Hemoglobin" step="0.1" placeholder="6-18" required>
+    </label>
+    <label>MCH (Mean Corpuscular Hemoglobin in pg): 
+      <input type="number" name="MCH" step="0.1" placeholder="20-40" required>
+    </label>
+    <label>MCHC (Mean Corpuscular Hemoglobin Concentration in g/dL): 
+      <input type="number" name="MCHC" step="0.1" placeholder="25-38" required>
+    </label>
+    <label>MCV (Mean Corpuscular Volume in fL): 
+      <input type="number" name="MCV" step="0.1" placeholder="60-100" required>
+    </label>
+
+    <br>
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if result %}
+    <h3>Prediction Results:</h3>
+    <p>🩺 Diabetes: {{ result.diabetes }}</p>
+    <p>❤️ Heart Disease: {{ result.heart_disease }}</p>
+    <p>🩸 Anemia: {{ result.anemia }}</p>
+  {% endif %}
+</body>
+</html>

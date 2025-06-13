@@ -1,0 +1,24 @@
+console.log(await lock.registerUser(2));
+console.log(await lock.registerUser(1));
+console.log(await lock.registerUser(2));
+const lock = await Lock.deploy();
+const Lock = await hre.ethers.getContractFactory("Lock");
+console.log(await lock.viewEHR("0x9ccf88f683d2b0425bac3184ff6f12562c443c6bdcc36e42145abfda093ac617"));
+console.log(await lock.viewPatientHistory("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"));
+dj
+const dj=await lock.issueEHR("0xhdrea");
+console.log(await lock.issueEHR("0xhdrea"));
+console.log(await lock.viewEHR("0x8975f98a2514c7234602ab6d6a4464b391eb2e751430ef456b6c280f3b2a1412"));
+console.log(await lock.viewEHR(0x8975f98a2514c7234602ab6d6a4464b391eb2e751430ef456b6c280f3b2a1412));
+console.log(await lock.viewEHR(byte32(a071f2cfae79fdec178c52fa9a4151aa66e0b69f5a13ee1641183b3ef027ea02)));
+console.log(await lock.viewEHR(a071f2cfae79fdec178c52fa9a4151aa66e0b69f5a13ee1641183b3ef027ea02));
+console.log(await lock.viewEHR("a071f2cfae79fdec178c52fa9a4151aa66e0b69f5a13ee1641183b3ef027ea02"));
+console.log(await lock.viewPatientHistory("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"));
+console.log(await lock.issueEHR("0xhdtesa"));
+console.log(await lock.registerUser(1));
+const lock = await Lock.deploy();
+const Lock = await hre.ethers.getContractFactory("Lock");
+console.log(await lock.registerUser(2));
+console.log(await lock.registerUser(1));
+const lock = await Lock.deploy();
+const Lock = await hre.ethers.getContractFactory("Lock");
